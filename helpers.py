@@ -23,7 +23,6 @@ def append_to_csv(filename, dataset_path, relative_time, semi_transductive, hete
                   batch_size, num_epochs, learning_rate, emb_dim, hidden_dim, time_dim, identity_dim,
                   train_loss, val_loss, test_loss, train_AUC, val_AUC, test_AUC, train_ap, val_ap, test_ap, run, num_params):
     if not os.path.exists(filename):
-        print("creat_file")
         with open(filename, mode='w', newline='') as file:
             writer = csv.writer(file)
             header = ['timestamp', "dataset_path", 'relative_time', "semi_transductive", "heterogenous_msg_passing",
@@ -40,25 +39,20 @@ def append_to_csv(filename, dataset_path, relative_time, semi_transductive, hete
                 train_loss, val_loss, test_loss, train_AUC, val_AUC, test_AUC, train_ap, val_ap, test_ap,run, num_params]
         writer.writerow(data)
 
-def append_to_csv_tgn(filename, dataset_path, relative_time, semi_transductive, heterogenous_msg_passing,
-                  batch_size, num_epochs, learning_rate, emb_dim, hidden_dim, time_dim, identity_dim,
-                  train_loss, val_loss, test_loss, train_AUC, val_AUC, test_AUC, train_ap, val_ap, test_ap, run):
+def append_to_csv_tgn(filename, dataset_path, batch_size, num_epochs, learning_rate, memory_dim, time_dim, embedding_dim, dropout, 
+                  train_loss, val_AUC, test_AUC, val_ap, test_ap, run):
     if not os.path.exists(filename):
-        print("creat_file")
         with open(filename, mode='w', newline='') as file:
             writer = csv.writer(file)
-            header = ['timestamp', "dataset_path", 'relative_time', "semi_transductive", "heterogenous_msg_passing",
-                      "batch_size", "num_epochs", "learning_rate", "emb_dim", "hidden_dim", "time_dim", "identity_dim",
-                      'train_loss', 'val_loss', 'test_loss', 'train_AUC', 'val_AUC', 'test_AUC',
-                      'train_AP', 'val_AP', 'test_AP', 'run']
+            header = ['timestamp', "dataset_path", "batch_size", "num_epochs", "learning_rate", "memory_dim", "time_dim", "embedding_dim", "dropout", 
+                      'train_loss', 'val_AUC', 'test_AUC', 'val_AP', 'test_AP', 'run']
             writer.writerow(header)
 
     with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        data = [timestamp, dataset_path, relative_time, semi_transductive, heterogenous_msg_passing,
-                batch_size, num_epochs, learning_rate, emb_dim, hidden_dim, time_dim, identity_dim,
-                train_loss, val_loss, test_loss, train_AUC, val_AUC, test_AUC, train_ap, val_ap, test_ap,run]
+        data = [timestamp, dataset_path, batch_size, num_epochs, learning_rate, memory_dim, time_dim, embedding_dim, dropout, 
+                  train_loss, val_AUC, test_AUC, val_ap, test_ap, run]
         writer.writerow(data)
 
 def create_mask_in_batches(edge_index, nodes, mask_batch_size, device):

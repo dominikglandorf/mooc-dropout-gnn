@@ -14,6 +14,8 @@ Run all cells in the notebook `data_preprocessing.ipynb` to create the necessary
 
 # Experiments
 
-For the experiments based on the GNN, run the cells in the file `gnn_experiments.ipynb` to add results to the file `results.csv` that contains the training details and metrics.
+For the experiments based on the GNN, execute the python script `gnn_experiments.py` or schedule it as a batch job via  `run_experiments.sh` to add results to the file `results.csv` that contains the training details and metrics.
 
-For the experiments based on the TGN, run the cells in the file `tgn_experiments.ipynb` to add results to the file `results.csv` that contains the training details and metrics.
+For the experiments based on the TGN, execute the python script `tgn_experiments.py` to add results to the file `results_tgn.csv` that contains the training details and metrics.
+
+One can postprocess the results with the notebook `process_results.ipynb` to create a latex table or other statistics.
