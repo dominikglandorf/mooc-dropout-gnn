@@ -1,6 +1,6 @@
 # Dropout prediction from MOOC interaction data with Graph Neural Networks
 
-This repository is part of a course project for CPSC483 at Yale University. The goal is to use Graph Neural Networks to predict whether an interaction in an online course environment will be the last one of a user.
+This repository is part of the course project for CPSC483 at Yale University by Dominik Glandorf. The goal is to use Graph Neural Networks to predict whether an interaction in an online course environment will be the last one of a user.
 
 # Setup
 To setup the environment, install conda and run `conda env create -f environment.yml`. To activate it, run `conda activate mooc`.
