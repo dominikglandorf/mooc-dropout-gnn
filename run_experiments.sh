@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name=gnn_exps
-#SBATCH --time=1:00
+#SBATCH --job-name=gnn_exps_2
+#SBATCH --time=4:00:00
 #SBATCH --mail-type=ALL
-#SBATCH --output=gnn_exps.txt
+#SBATCH --output=gnn_exps_2.txt
 #SBATCH --ntasks=1
-#SBATCH --partition=gpu
+#SBATCH --partition=gpu_devel
 #SBATCH --gpus=1
 #SBATCH --mem=24G 
 
