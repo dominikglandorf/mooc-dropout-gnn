@@ -202,7 +202,7 @@ for i in range(0, 3):
         print(f'Val AP: {val_ap:.4f}, Val AUC: {val_auc:.4f}')
         print(f'Test AP: {test_ap:.4f}, Test AUC: {test_auc:.4f}')
     
-    append_to_csv_tgn("results_tgn.csv", dataset_path, batch_size, num_epochs, learning_rate, memory_dim, time_dim, embedding_dim, dropout,
+    append_to_csv_tgn("results/results_tgn.csv", dataset_path, batch_size, num_epochs, learning_rate, memory_dim, time_dim, embedding_dim, dropout,
                   loss, val_auc, test_auc, val_ap, test_ap, i)
 
 

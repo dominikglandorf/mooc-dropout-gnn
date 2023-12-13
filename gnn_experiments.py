@@ -162,7 +162,7 @@ for i in range(0, 3):
         train_loss, train_auc, train_ap = test(gnn, link_pred, time_enc, train_loader)
         test_loss, test_auc, test_ap = test(gnn, link_pred, time_enc, test_loader)
         
-        append_to_csv("results.csv", dataset_path, relative_time, semi_transductive, heterogenous_msg_passing,
+        append_to_csv("results/results.csv", dataset_path, relative_time, semi_transductive, heterogenous_msg_passing,
                       batch_size, num_epochs, learning_rate, emb_dim, hidden_dim, time_dim, identity_dim,
                       train_loss.item(), val_loss.item(), test_loss.item(), train_auc, val_auc, test_auc, train_ap, val_ap, test_ap, i, num_params)
 
